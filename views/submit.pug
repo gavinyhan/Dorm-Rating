@@ -1,0 +1,73 @@
+extends layoutBS
+
+block content
+  h1 Submit Dorm Review
+  form(method="post" action="/saveUniversity") University
+    input(name="university" type="text" placeholder="University")
+    br
+    label(for='dormbuilding') Dorm Building
+    input(name="dormbuilding" type="text" placeholder="Dorm Building")
+    p Dorm Style
+      ul
+        input(name="double" type="checkbox")
+        label(for='double') Double
+        br
+        input(name="single" type="checkbox")
+        label(for='single') Single
+        br
+        input(name="standardtriple" type="checkbox")
+        label(for='standardtriple') Standard Triple
+        br
+        input(name="forcedtriple" type="checkbox")
+        label(for='forcedtriple') Forced Triple
+        br
+        input(name="suite" type="checkbox")
+        label(for='suite') Suite
+        br
+        input(name="floors" type="text" placeholder="Number of Floors")
+        label(for='floors') Number of Floors
+    p Bathroom Style
+      ul
+        input(name="toilets" type="text" placeholder="Number of Toilets")
+        label(for='toilets') Number of Toilets
+        br
+        input(name="showers" type="text" placeholder="Number of Showers")
+        label(for='showers') Number of Showers
+        br
+        input(name="sinks" type="text" placeholder="Number of Sinks")
+        label(for='sinks') Number of Sinks
+        br
+        input(name="includetowels" type="checkbox")
+        label(for='includetowels') Include Towels
+        br
+        input(name="includesoaps" type="checkbox")
+        label(for='includesoaps') Include Soaps
+
+    p Gender
+      ul
+        input(name="mixed" type="checkbox")
+        label(for='mixed') Mixed
+        br
+        input(name="malefemaleonseparateside" type="checkbox")
+        label(for='malefemaleonseparateside') Male/Female on Separate Side
+    p Facility & Highlight
+      ul
+        input(name="gym" type="checkbox")
+        label(for='gym') Gym
+        br
+        input(name="bigbathroom" type="checkbox")
+        label(for='bigbathroom') Big Bathroom
+        br
+        input(name="bigshoweringarea" type="checkbox")
+        label(for='bigshoweringarea') Big Showering Area
+        br
+        input(name="picturesqueview" type="checkbox")
+        label(for='picturesqueview') Picturesque View
+    p Weakness
+      ul
+        input(name="bugs" type="checkbox")
+        label(for='bugs') Bugs
+    p Other Insights
+      br
+      textarea#test1(rows="10" cols="40" name="insights")
+    input(type='submit')

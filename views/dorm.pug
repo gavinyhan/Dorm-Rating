@@ -1,0 +1,26 @@
+extends layoutBS
+
+block content
+  h1 Search Dorm
+  br
+  input.form-control(type='text', placeholder='Enter University or Name of Dorm Building')
+  input(type='submit')
+    
+  ol
+      style.
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+            
+      
+      table(style='width:100%')
+        tr
+          th University
+          th Dorm Building
+        each u in dorm 
+          tr
+            td #{u.university}
+            td 
+              a(href="/dorm/"+u._id) #{u.dormbuilding}
