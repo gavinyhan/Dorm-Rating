@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require( 'mongoose' );
 
-//var userSchema = mongoose.Schema( {any:{}})
+//var userSchema = mongoose.Schema( {any:{}}) 
 
 var userSchema = mongoose.Schema( {
   googleid: String,
