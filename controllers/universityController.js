@@ -31,7 +31,26 @@ exports.saveUniversity = ( req, res ) => {
   console.dir(req)
   let newUniversity = new University( {
     university: req.body.university,
-    dormbuilding: req.body.dormbuilding
+    dormbuilding: req.body.dormbuilding,
+    double: req.body.double=='on',
+    single: req.body.single=='on',
+    standardtriple: req.body.standardtriple=='on',
+    forcedtriple: req.body.forcedtriple=='on',
+    suite: req.body.suite=='on',
+    floors: req.body.floors,
+    toilets: req.body.toilets,
+    showers: req.body.showers,
+    sinks: req.body.sinks,
+    includetowels: req.body.includetowels=='on',
+    includesoaps: req.body.includesoaps=='on',
+    mixed: req.body.mixed=='on',
+    malefemaleonseparateside: req.body.malefemaleonseparateside=='on',
+    gym: req.body.gym=='on',
+    bigbathroom: req.body.bigbathroom=='on',
+    bigshoweringarea: req.body.bigshoweringarea=='on',
+    picturesqueview: req.body.picturesqueview=='on',
+    bugs: req.body.bugs=='on',
+    insights: req.body.insights,
   } )
 
   console.log("university = "+newUniversity)

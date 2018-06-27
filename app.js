@@ -98,6 +98,7 @@ function isLoggedIn(req,res,next){
     res.locals.loggedIn = false
     if (req.isAuthenticated()) {
       console.log("user has been authenticated")
+      req.locals.loggedIn = true
       return next();
     } else {
       console.log("user has not been authenticated")
@@ -123,12 +124,12 @@ app.use((req,res,next)=>{
 app.use('/', dormlistRouter);
 const University = require( './models/university' );
 const dormController = require('./controllers/dormController')
-const infoController = require('./controllers/infoController')
+//const infoController = require('./controllers/infoController')
 app.use('/dorm', dormController.getAllDorm)
 app.use('/dorm/:id',
   dormController.attachDorm,
-  universityController.attachUniversity,
-  infoController.attachInfo,
+  universityController.attachUniversity//,
+  //infoController.attachInfo,
 )
 
 
@@ -140,7 +141,8 @@ app.use('/dorm/:id',
 //
 //app.use('/submit', submitRouter);
 app.get('/submit', universityController.getAllUniversity );
-app.post('/saveInfo', infoController.saveInfo );
+app.post('/saveUniversity', universityController.saveUniversity );
+
 
 
 

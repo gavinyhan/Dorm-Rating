@@ -19,8 +19,20 @@ block content
         tr
           th University
           th Dorm Building
+          th Dorm style 
+          th Bathroom Style
+          th Gender
+          th Facility & Highlight
+          th Weakness
+          th Other Insights
         each u in dorm 
           tr
             td #{u.university}
             td 
               a(href="/dorm/"+u._id) #{u.dormbuilding}
+            td #{u.double?'double':''},#{u.single?'single':''},#{u.standardtriple?'standardtriple':''},#{u.forcedtriple?'forcedtriple':''},#{u.suite?'suite':''}, Number of Floors: #{u.floors}
+            td Number of Toilets: #{u.toilets} | Number of Showers: #{u.showers} | Number of Sinks: #{u.sinks}, #{u.includetowels?'includetowels':''},#{u.includesoaps?'includesoaps':''}
+            td #{u.mixed?'mixed':''},#{u.malefemaleonseparateside?'malefemaleonseparateside':''}
+            td #{u.gym?'gym':''},#{u.bigbathroom?'bigbathroom':''},#{u.bigshoweringarea?'bigshoweringarea':''},#{u.picturesqueview?'picturesqueview':''}
+            td #{u.bugs?'bugs':''}
+            td #{u.insights}
